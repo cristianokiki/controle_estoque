@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:ControleEstoque.Pages.View"
+             Title="Fornecedores"
+             x:Class="ControleEstoque.Pages.FornecedorPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" 
+                     Margin="5,5,5,5">
+
+            <ListView ItemsSource="{Binding Fornecedores}"
+                      SelectedItem="{Binding FornecedorSelecionado}">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Cód."
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"/>
+
+                            <Label Text="CNPJ"
+                                   FontAttributes="Bold"
+                                   Grid.Column="1"/>
+
+                            <Label Text="Nome"
+                                   FontAttributes="Bold"
+                                   Grid.Column="2"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Id}"
+                                       Grid.Column="0"/>
+
+                                <Label Text="{Binding Cnpj}"
+                                       Grid.Column="1"/>
+
+                                <Label Text="{Binding Nome}"
+                                       Grid.Column="2"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <view:ButtonsCrudView/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

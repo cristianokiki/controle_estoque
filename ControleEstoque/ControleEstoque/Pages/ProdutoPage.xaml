@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:ControleEstoque.Pages.View"
+             x:Class="ControleEstoque.Pages.ProdutoPage"
+             Title="Produtos">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Margin="5,5,5,5">
+            <ListView ItemsSource="{Binding Produtos}">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Cód."
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="Descrição"
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="Unid."
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="Fornec."
+                                   FontAttributes="Bold"/>
+
+                            <Label Text="Status"
+                                   FontAttributes="Bold"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="20"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding Codigo}"/>
+
+                            <Label Text="{Binding Descricao}"/>
+
+                            <Label Text="{Binding Unidade}"/>
+
+                            <Label Text="{Binding TbFornecedor.Nome}"/>
+
+                            <Label Text="{Binding Desativado}"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <view:ButtonsCrudView/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
