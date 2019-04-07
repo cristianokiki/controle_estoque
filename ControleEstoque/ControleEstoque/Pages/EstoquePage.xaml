@@ -1,12 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ControleEstoque.Pages.EstoquePage">
+             x:Class="ControleEstoque.Pages.EstoquePage"
+             Title="Estoque">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="5">
+            <ListView ItemsSource="{Binding EstoqueConsolidado}">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Codigo"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"></Label>
+                        <Label Text="Descricao"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               Grid.Column="1"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"></Label>
+                        <Label Text="Fornecedor"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               Grid.Column="2"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"></Label>
+                        <Label Text="Quantidade"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               Grid.Column="3"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"></Label>
+
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding ProdutoCodigo}"
+                                       Grid.Column="0"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"></Label>
+                                <Label Text="{Binding ProdutoDescricao}"
+                                       Grid.Column="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"></Label>
+                                <Label Text="{Binding FornecedorNome}"
+                                       Grid.Column="2"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"></Label>
+                                <Label Text="{Binding QtdConsolidada}"
+                                       Grid.Column="3"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

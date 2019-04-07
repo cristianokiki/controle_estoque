@@ -11,7 +11,7 @@ namespace ControleEstoque.Model
         public string ProdutoDescricao { get; set; }
         public string FornecedorCnpj { get; set; }
         public string FornecedorNome { get; set; }
-        public int QtdConsolidada { get; set; }
+        public double QtdConsolidada { get; set; }
 
     }
 }
