@@ -26,8 +26,8 @@ namespace ControleEstoque.Service
         [Put("/Produto/Update")]
         Task<ApiResponse<Produto>> UpdateProduto([Body] Produto produto);
 
-        [Delete("/Produto/Update")]
-        Task<ApiResponse<object>> DeleteProduto([Body] DeleteDto delete);
+        [Delete("/Produto/Delete")]
+        Task<ApiResponse<object>> DeleteProdutos([Body] List<DeleteDto> delete);
         #endregion
 
         #region fornecedor
