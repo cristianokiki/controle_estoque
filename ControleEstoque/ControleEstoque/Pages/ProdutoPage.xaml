@@ -6,63 +6,97 @@
              Title="Produtos">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical"
-                     Margin="5,5,5,5">
-            <ListView ItemsSource="{Binding Produtos}">
-                <ListView.HeaderTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Text="Cód."
-                                   FontAttributes="Bold"/>
-
-                            <Label Text="Descrição"
-                                   FontAttributes="Bold"/>
-
-                            <Label Text="Unid."
-                                   FontAttributes="Bold"/>
-
-                            <Label Text="Fornec."
-                                   FontAttributes="Bold"/>
-
-                            <Label Text="Status"
-                                   FontAttributes="Bold"/>
-
-                        </Grid>
-                    </DataTemplate>
-                </ListView.HeaderTemplate>
+                     Margin="5">
+            <ListView ItemsSource="{Binding Produtos}"
+                      SelectedItem="{Binding ProdutoSelecionado}">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Codigo" 
+                               FontSize="Medium"
+                               Grid.Column="0"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation"></Label>
+                        <Label Text="Descrição"
+                               FontSize="Medium"
+                               Grid.Column="1"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation"></Label>
+                        <Label Text="Unidade"
+                               FontSize="Medium"
+                               Grid.Column="2"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation"></Label>
+                        <Label Text="Status"
+                               FontSize="Medium"
+                               Grid.Column="3"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation"></Label>
+                        <Label Text="Fornecedor"
+                               FontSize="Medium"
+                               Grid.Column="4"
+                               HorizontalOptions="Center"
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation"></Label>
+                    </Grid>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                                <ColumnDefinition Width="20"/>
-                            </Grid.ColumnDefinitions>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
 
-                            <Label Text="{Binding Codigo}"/>
-
-                            <Label Text="{Binding Descricao}"/>
-
-                            <Label Text="{Binding Unidade}"/>
-
-                            <Label Text="{Binding TbFornecedor.Nome}"/>
-
-                            <Label Text="{Binding Desativado}"/>
-
-                        </Grid>
+                                <Label Text="{Binding Codigo}" 
+                                       FontSize="Medium"
+                                       Grid.Column="0"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"></Label>
+                                <Label Text="{Binding Descricao}"
+                                       FontSize="Medium"
+                                       Grid.Column="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"></Label>
+                                <Label Text="{Binding Unidade}"
+                                       FontSize="Medium"
+                                       Grid.Column="2"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"></Label>
+                                <Label Text="{Binding Desativado}"
+                                       FontSize="Medium"
+                                       Grid.Column="3"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"></Label>
+                                <Label Text="{Binding TbFornecedor.Nome}"
+                                       FontSize="Medium"
+                                       Grid.Column="4"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="TailTruncation"></Label>
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
             <view:ButtonsCrudView/>
         </StackLayout>
     </ContentPage.Content>

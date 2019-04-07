@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControleEstoque.Pages.InsertOrUpdateProdutoPage">
+    <ContentPage.Content>
+        <ScrollView>
+              <StackLayout Margin="10,10,10,10">
+                  <Frame>
+                      <StackLayout>
+                          <Label Text="Codigo"></Label>
+                          <Entry Text="{Binding Produto.Codigo}"
+                                 HorizontalOptions="FillAndExpand"></Entry>
+                          <Label Text="Descrição"></Label>
+                          <Entry Text="{Binding Produto.Descricao}"
+                                 HorizontalOptions="FillAndExpand"></Entry>
+                          <Label Text="Unidade"></Label>
+                          <Entry Text="{Binding Produto.Unidade}"
+                                 HorizontalOptions="FillAndExpand"></Entry>
+                          <StackLayout Orientation="Horizontal">
+                              <Label Text="Ativo"></Label>
+                              <Switch IsToggled="{Binding Produto.Desativado}"></Switch>
+                          </StackLayout>
+                          <StackLayout Orientation="Horizontal">
+                              <Label Text="Fornecedor:"
+                                     VerticalOptions="Center"></Label>
+                              <Picker ItemsSource="{Binding Fornecedores}"
+                                      ItemDisplayBinding="{Binding Nome}"
+                                      SelectedItem="{Binding Produto.TbFornecedor}"
+                                      Title="Fornecedor"
+                                      VerticalOptions="Center"
+                                      HorizontalOptions="FillAndExpand"></Picker>
+                          </StackLayout>                    
+                      </StackLayout>
+                  </Frame>
+                  <Button Text="Salvar"
+                          Command="{Binding SalvarCommand}"></Button>
+              </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

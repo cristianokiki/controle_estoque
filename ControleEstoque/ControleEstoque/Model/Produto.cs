@@ -6,7 +6,7 @@ namespace ControleEstoque.Model
 {
     public class Produto
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int FornecedorId { get; set; }
         public string Codigo { get; set; }
         public string Descricao { get; set; }
